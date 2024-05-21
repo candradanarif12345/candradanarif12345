@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perhitungan Total Bayar</title>
+</head>
+<body>
+    <h1>Perhitungan Total Bayar</h1>
+    <label for="nama">Nama Barang:</label>
+    <input type="text" id="nama" required><br><br>
+    <label for="harga">Harga Barang:</label>
+    <input type="number" id="harga" required><br><br>
+    <label for="jumlah">Jumlah Barang:</label>
+    <input type="number" id="jumlah" required><br><br>
+    <button onclick="hitungTotalBayar()">Hitung Total Bayar</button>
+    <p id="totalBayar"></p>
+
+    <script>
+        function hitungTotalBayar() {
+            var namaBarang = document.getElementById('nama').value;
+            var hargaBarang = parseInt(document.getElementById('harga').value);
+            var jumlahBarang = parseInt(document.getElementById('jumlah').value);
+            var totalBayar;
+
+            if (jumlahBarang >= 3) {
+                var diskon = 0.1 * hargaBarang;
+                totalBayar = (hargaBarang * jumlahBarang) - diskon;
+            } else {
+                totalBayar = hargaBarang * jumlahBarang;
+            }
+
+            document.getElementById('totalBayar').innerHTML = 'Total Bayar untuk ' + jumlahBarang + ' ' + namaBarang + ' adalah Rp ' + totalBayar;
+        }
+    </script>
+</body>
+</html>

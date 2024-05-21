@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perhitungan Gaji</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url('motor1.jpeg'); /* Gambar latar belakang */
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 500px;
+        margin: 50px auto;
+        background-color: aquamarine;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+    label {
+        font-weight: bold;
+    }
+    input[type="number"] {
+        width: 95%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #0abb80;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #854581;
+    }
+    #hasil {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #00ff00d5;
+        border-radius: 5px;
+    }
+</style>
+<script>
+    function hitungGaji() {
+        var gajiPerHari = 50000;
+        var uangMakan = 5000;
+        var hariKerja = parseInt(document.getElementById("hariKerjaInput").value);
+        var jamLembur = parseInt(document.getElementById("jamLemburInput").value);
+        
+        // Hitung gaji lembur berdasarkan ketentuan
+        var gajiLembur = 0;
+        if (jamLembur >= 3) {
+            gajiLembur = 35000 * jamLembur;
+        } else if (jamLembur === 1) {
+            gajiLembur = 25000;
+        } else if (jamLembur === 2) {
+            gajiLembur = 50000;
+        }
+
+        // Hitung uang makan hanya jika hari kerja minimal 20 hari

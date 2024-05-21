@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Nilai</title>
+</head>
+<body>
+    <h1>Konversi Nilai</h1>
+    <label for="nilai">Masukkan nilai Anda:</label>
+    <input type="number" id="nilai" required>
+    <button onclick="konversiNilai()">Konversi</button>
+    <p id="hasil"></p>
+
+    <script>
+        function konversiNilai() {
+            var nilai = parseInt(document.getElementById('nilai').value);
+            var grade;
+
+            if (nilai >= 80 && nilai <= 100) {
+                grade = 'A';
+            } else if (nilai >= 70 && nilai <= 79) {
+                grade = 'B';
+            } else if (nilai >= 60 && nilai <= 69) {
+                grade = 'C';
+            } else if (nilai >= 50 && nilai <= 59) {
+                grade = 'D';
+            } else {
+                grade = 'E';
+            }
+
+            document.getElementById('hasil').innerHTML = 'Nilai Anda: ' + nilai + '<br>Grade: ' + grade;
+        }
+    </script>
+</body>
+</html>
